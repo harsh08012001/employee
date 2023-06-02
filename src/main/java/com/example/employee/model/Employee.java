@@ -20,6 +20,7 @@ public class Employee {
 	private String phno;
 	private double salary;
 	private String dept;
+	private String gender;
 	
 	
 	public Employee() {
@@ -73,6 +74,14 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", address=" + address + ", email=" + email + ", phno=" + phno
 				+ ", salary=" + salary + ", dept=" + dept + "]";
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
 }
