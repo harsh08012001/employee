@@ -79,9 +79,15 @@
 							</div>
 							
 							<div class="form-group">
-								<label>Enter Department</label> <input type="text"
-									class="form-control" name="dept" th:value="${emp.dept}">
-							</div>
+    <label>Enter Department</label>
+    <select class="form-control" name="dept">
+        <option th:each="department: ${departments}" 
+        th:text="${department.name}" 
+        th:value="${department.name}" ></option>
+        
+        
+    </select>
+</div>
 
 							<button class="btn btn-secondary btn-block">Submit</button>
 						</form>

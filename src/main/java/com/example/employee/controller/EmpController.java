@@ -2,7 +2,7 @@ package com.example.employee.controller;
 
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.employee.model.Dept;
 import com.example.employee.model.Employee;
 import com.example.employee.service.EmpService;
 
@@ -66,12 +67,25 @@ public class EmpController {
 	
 	
 	@PostMapping("/register")
-	public String addEmp(@ModelAttribute Employee e,HttpSession session)
-	{
-		System.out.println(e);
+	public String addEmp(@ModelAttribute Employee e)
+	{	
 		service.addEmp(e);
-		session.setAttribute("msg", "Emp Added");
+		
 		return "redirect:/";
+	}
+	
+	@ModelAttribute("departments")
+	public ArrayList<Dept> getDepartments()
+	{
+		ArrayList<Dept> list =new ArrayList<Dept>();
+		list.add(new Dept("Sales"));
+		list.add(new Dept("HR"));
+		list.add(new Dept("Development"));
+		list.add(new Dept("Marketing"));
+		return list;
+		
+		
+		
 	}
 
 }

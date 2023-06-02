@@ -75,11 +75,21 @@
 								<label>Enter Salary</label> <input type="number"
 									class="form-control" name="salary">
 							</div>
+							<div class="form-group"
+							>
+   <div class="form-group">
+    <label>Enter Department</label>
+    <select class="form-control" name="dept">
+        <option th:each="department: ${departments}" 
+        th:text="${department.name}" 
+        th:value="${department.name}" ></option>
+        
+        
+    </select>
+</div>
+
+</div>
 							
-							<div class="form-group">
-								<label>Enter Department</label> <input type="text"
-									class="form-control" name="dept">
-							</div>
 
 							<button class="btn btn-secondary btn-block">Submit</button>
 						</form>

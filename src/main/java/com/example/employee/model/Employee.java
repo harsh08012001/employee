@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Table(name="Emp")
 public class Employee {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
